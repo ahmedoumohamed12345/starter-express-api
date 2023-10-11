@@ -22,6 +22,9 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 app.use(express.json()); // Enable JSON request body parsing
+app.use(cors({
+  origin: 'https://recruitm-front.vercel.app',
+}));
 
 app.get("/signup", (req, res) => {
   // Redirect the user to Google's OAuth consent page
